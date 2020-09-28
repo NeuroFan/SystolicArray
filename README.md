@@ -1,5 +1,6 @@
 # Systolic_Array_ABFT
 SPICE and Behavioral simulation of systolic array equipped with ABFT 
+The multiplier circuit in HSPICE was implemented as Wallace Tree multiplier (https://github.com/SiluPanda/8-bit-wallace-tree-multipier).
 
 
 
@@ -10,4 +11,3 @@ frequency (and hence save a huge simulation time) as the results for 1 slow enou
 ![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/simulation_snap_shot.png)
 ![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/sample.png)
 
-The multiplier circuit in HSPICE was implemented as Wallace Tree multiplier (https://github.com/SiluPanda/8-bit-wallace-tree-multipier).
