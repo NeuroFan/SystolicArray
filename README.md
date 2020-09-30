@@ -1,4 +1,8 @@
-# Systolic_Array_ABFT
+# Basic Idea
+
+We need to demostrate efficacy of Algorithm Based Fault Tolerance method for achiving low-voltage (high performance) computing. We propose a systolic array model with extra circuitry to detected computational errors on the fly. We need a platfom to simulate low-voltage operatiopn of our systolic array. The common digital simulation and synthesis tools lack detailed charactristics of logic cells hence we resort to perform our simulations using SPICE models.
+
+# Systolic Array with ABFT flavor
 SPICE and Behavioral simulation of systolic array equipped with ABFT 
 The multiplier circuit in HSPICE was implemented as Wallace Tree multiplier (https://github.com/SiluPanda/8-bit-wallace-tree-multipier).
 
