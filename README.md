@@ -7,7 +7,7 @@ We need to demostrate efficacy of Algorithm Based Fault Tolerance method for ach
 # Processing Elements
 The multiplier circuit in HSPICE was implemented as Wallace Tree multiplier (https://github.com/SiluPanda/8-bit-wallace-tree-multipier) and the adders are based on carry-ripple-adder/subtracture that we already used in Analog-to-Digital circuit http://jultika.oulu.fi/files/nbnfi-fe202001162310.pdf.
 
-# HSPICE to MATLAB data transfer
+# HSPICE to/from MATLAB data transfer
 
 Data are read from transient simulatin using HSPICE toolbox (by Michael H. Perrott), available form https://cppsim.com/. Please note this toolbox requires the post format of output to be set to '.option POST_VERSION = 9601'. Binary digital stimuli data to HSPICE is generated using a MATLAB script (available in repository). “HPSC” Program can also be utilized for this purpose https://www.cppsim.com/Manuals/hspc.pdf.
 
