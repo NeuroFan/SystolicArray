@@ -14,6 +14,7 @@ Data are read from transient simulatin using HSPICE toolbox (by Michael H. Perro
 # Sweep on Voltage but not Frequency
 
 All the possible data transition for PEs are collected from behavioral simulations. Simulations are re-itrated for all inputs and for all possbile voltage supplies (from Vth to full scale) with reasonabe step sizes (e.g. 0.1v). However, for charactrizations we do not need to sweep across all frequencies, instead simply change the output sampling time after rising edge (feeding the stimuli input) and we observe the circuits response for that imaginary clock period. As the sampling time gets closer to clock rising edge (i.e. a shorted clock period is assumed) the error rate invevitably will rise as shown in following figure.
+
 ![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/clock_edge_sample.png)
 
 
