@@ -6,6 +6,7 @@ The multiplier circuit in HSPICE was implemented as Wallace Tree multiplier (htt
 
 Data are read from transient simulatin using HSPICE toolbox (by Michael H. Perrott), available form https://cppsim.com/. Please note this toolbox requires the post format of output to be set to '.option POST_VERSION = 9601'. Binary digital stimuli data to HSPICE is generated using a MATLAB script (available in repository). “HPSC” Program can also be utilized for this purpose https://www.cppsim.com/Manuals/hspc.pdf.
 
+# Simulation samples
 The following is an example screen shot of DUT. The output is not messy as it is spice simulation results. 
 The simulation for finding optimum voltage-frequency requires sweeping from full-scall Vdd down to threshold voltage, however we do not need to sweep
 frequency (and hence save a huge simulation time) as the results for 1 slow enough clock period determinds the maximum operating frequency.
