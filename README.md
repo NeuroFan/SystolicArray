@@ -17,3 +17,5 @@ The simulation for finding optimum voltage-frequency requires sweeping from full
 frequency (and hence save a huge simulation time) as the results for 1 slow enough clock period determinds the maximum operating frequency.
 ![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/simulation1.png)
 
+As the sampling time gets closer to clock rising edge (i.e. a shorted clock period is assumed) the error rate invevitably will rise as shown in following figure.
+![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/clock_edge_sample.png)
