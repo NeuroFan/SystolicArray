@@ -8,6 +8,15 @@ We need to demostrate efficacy of Algorithm Based Fault Tolerance method for ach
 Each PE in the systolic array contains a MAC unit and a handful of flip-flops to pass data and/or to accomulate local results. The multiplier circuit in HSPICE was implemented as Wallace Tree multiplier (https://github.com/SiluPanda/8-bit-wallace-tree-multipier) and the adders are based on carry-ripple-adder/subtracture that we already used in Analog-to-Digital circuit https://en.wikipedia.org/wiki/Adder%E2%80%93subtractor. 
 Note, when the supply is reduced the setup and hold time of flip-flops will be effected as well, hence we had to develope a model and MATLAB script to extract those information for different voltage and operaiton frequency. There is a good Q&A in stackexchange where it explain the concept https://electronics.stackexchange.com/questions/81709/how-to-find-setup-time-and-hold-time-for-d-flip-flop.
 
+## HSPICE/MATLAB simulation and post-processing time
+The following speculations are based on our simulations on a server computer (with Intel Xenon Processor).
+
+To obtain circuit results for exact inputs (hence not a probablity based model) we must carry a *Transient* simulation of the processor for different voltages. 
+For HSPICE part as well, ideally we must simulate "ALL" combinations of inputs, i.e. for two 8-bit input and one 24-bit feedback internal input (from Accomulator register) we need perfom simulations for *2^32* different combinations of inputs. Add to this complexity the need for simulating the circuit under around 100 different voltage levels (e.g. from 0.3 to 1.2 with 0.1v step size), which translated into ~2^38.2 different combinatons of input and supply voltage! Now, for 2^12 data entries it take a couple of hours for HSPICE to finish (on a single thread, e.g. -mt 1). Now you can imagine it can easily take years for doing all simulations for $2^38.2$.
+Most of simulation time is consumed in HSPICE and MATLAB (where the HSPICE output needs to be "resampl"ed since HSPICE results are non-unifermly sampled in time). The SPICE simulation and MATLAB post-processing (i.e. data alignments) take a long time. For MATLAB part, simply breaking data into smaller pieces and then performing resampling (which is basically a linear interpolation) increases the processing time significantly. 
+
+Unique combination extraction, out of all possible inputs and outputs and internal signals to all PEs most of them are redundant so in pre-processing only unique combinations are preserved and the rest are removed, this aids us in accelerating the simulation by multiple orders of magnitites.
+
 # HSPICE to/from MATLAB data transfer
 
 Data are read from transient simulatin using HSPICE toolbox (by Michael H. Perrott), available form https://cppsim.com/. Please note this toolbox requires the post format of output to be set to '.option POST_VERSION = 9601'. Binary digital stimuli data to HSPICE is generated using a MATLAB script (available in repository). “HPSC” Program can also be utilized for this purpose https://www.cppsim.com/Manuals/hspc.pdf.
