@@ -2,7 +2,7 @@
 
 # Systolic Array with ABFT flavor
 
-We need to demostrate efficacy of Algorithm Based Fault Tolerance method for achiving low-voltage (high performance) computing. We propose a systolic array model with extra circuitry to detected computational errors on the fly. We need a platfom to simulate low-voltage operatiopn of our systolic array. The common digital simulation and synthesis tools lack detailed charactristics of logic cells hence we resort to perform our simulations using SPICE models. The flow of simulations are shown in below.
+We need to demostrate efficacy of Algorithm Based Fault Tolerance method for achiving low-voltage (high performance) computing. We propose a systolic array model with extra circuitry to detected computational errors on the fly. We need a platfom to simulate low-voltage operatiopn of our systolic array. The common digital simulation and synthesis tools lack detailed charactristics of logic cells hence we resort to perform our simulations using SPICE models. The flow of simulations are shown in below. The computer code or SPICE script of each section can be found in the repo.
 ![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/flow_of_simulations.png)
 
 
