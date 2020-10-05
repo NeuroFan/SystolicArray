@@ -40,4 +40,30 @@ frequency (and hence save a huge simulation time) as the results for 1 slow enou
 ![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/simulation1.png)
 
 
-To be completed .....
+
+
+# Description of Co-simulation software
+
+Generate Data :
+
+
+Name: transient_signals_extract.m
+
+Input: Matrix size
+Output: Unique transient operations to be used as stumuli in HSPICE simulations
+
+Description: Since we cannot practically simulate a digital block in HSPICE for all possible inputs we extract the ones that actually are needed and simulate our PE for those. Further, since in a matrix-matrix multiplication most of the operations happen to have same inputs we must remove repeated operations. This function does that.
+
+Steps:
+
+1. Generate random matrices and convert into ABFT matrices (row, column wise)
+
+2. do matrix multiplication and extract all operations along with their inputs (add, mul)
+
+3. remove repeated operations with their inputs from the list (only Unique combination of inputs stay)
+
+
+Name : generateSpiceData.m  
+
+Convert unique input data generated using “transient_signals_extract.m” into binary format and generate HSPICE readable file 
+
