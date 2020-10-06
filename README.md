@@ -41,6 +41,13 @@ frequency (and hence save a huge simulation time) as the results for 1 slow enou
 
 
 
+# Co-simulation GUI
+
+There are many script from different platforms required to be run in sequence and managing all for exhastive simulations with different parameters is difficual. For ease of use a simple GUI was designed as well to assist on this regard.
+![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/GUI.png
+)
+
+
 
 # Description of Co-simulation software
 
