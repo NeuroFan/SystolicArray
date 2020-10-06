@@ -44,6 +44,7 @@ frequency (and hence save a huge simulation time) as the results for 1 slow enou
 # Co-simulation GUI
 
 There are many script from different platforms required to be run in sequence and managing all for exhastive simulations with different parameters is difficual. For ease of use a simple GUI was designed as well to assist on this regard.
+This is still not a full automatic solution, and user must change the voltage-frequencies adaptively himself. It still takes weeks for the results generated for figures like the ones used in [1].
 ![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/GUI.png
 )
 
