@@ -51,10 +51,24 @@ This is still not a full automatic solution, and user must change the voltage-fr
 
 
 # Description of Co-simulation software
+--------------------------------------------------------------------------------------------------
+Main Script:
+Name : run_SHELL.m
 
+Input : Simulation parameters
+Output : Power consumption, actual error rate, ABFT error rate, etc.
+
+Description:
+The script does the following task in order:
+  1. system level matrix mul with ABFT augmented matrices and extract data fed on Systolic Array building blocks
+  2. Remove the repeatitive data (for example there might be 2 operations wit same inputs so only simulating once is enough
+  3. Convert the unique data/operation set into binary and generate a file that is usable by HSPICE; 
+  4. Modify HSPICE model to have supply voltage according to simulations parameters and run HSPICE from SHELL
+  5. Read back the transient simulation results, first do data alignment according to clock, then check integrity and detect faults
+  6. Redo Step 1, i.e. system level simulation however this time using results of operations from step 5
+  7. On sysyem 
+--------------------------------------------------------------------------------------------------
 Generate Data :
-
-
 Name: transient_signals_extract.m
 
 Input: Matrix size
@@ -74,4 +88,4 @@ Steps:
 Name : generateSpiceData.m  
 
 Convert unique input data generated using “transient_signals_extract.m” into binary format and generate HSPICE readable file 
-
+--------------------------------------------------------------------------------------------------
