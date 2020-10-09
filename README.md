@@ -68,13 +68,14 @@ Output : Power consumption, actual error rate, ABFT error rate, etc.
 
 Description:
 The script does the following task in order:
-  1. system level matrix mul with ABFT augmented matrices and extract data fed on Systolic Array building blocks
-  2. Remove the repeatitive data (for example there might be 2 operations wit same inputs so only simulating once is enough
-  3. Convert the unique data/operation set into binary and generate a file that is usable by HSPICE; 
-  4. Modify HSPICE model to have supply voltage according to simulations parameters and run HSPICE from SHELL
-  5. Read back the transient simulation results, first do data alignment according to clock, then check integrity and detect faults
-  6. Redo Step 1, i.e. system level simulation however this time using results of operations from step 5
-  7. On sysyem 
+ 1. system level matrix mul with ABFT augmented matrices and extract data fed on Systolic Array building blocks
+ 2. Remove the repeatitive data (for example there might be 2 operations wit same inputs so only simulating once is enough
+ 3. Convert the unique data/operation set into binary and generate a file that is usable by HSPICE; 
+ 4. Modify HSPICE model to have supply voltage according to simulations parameters and run HSPICE from SHELL
+ 5. Read back the transient simulation results, first do data alignment according to clock, then check integrity and detect faults
+ 6. Redo Step 1, i.e. system level simulation however this time using results of operations from step 5
+ 7. System Level simulation of ABFT checking part (the extra circuit on the systolic- notice the HSPIC simulation must verify error detection cirucit as well)
+ 8. Extract power consumption, do extrapolations and estimations, report total estimated power + error rate + etc.
 --------------------------------------------------------------------------------------------------
 Generate Data :
 Name: transient_signals_extract.m
