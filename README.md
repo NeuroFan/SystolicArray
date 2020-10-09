@@ -8,7 +8,9 @@ We need to demostrate efficacy of Algorithm Based Fault Tolerance method for ach
 
 # Processing Elements
 Each PE in the systolic array contains a MAC unit and a handful of flip-flops to pass data and/or to accomulate local results. The multiplier circuit in HSPICE was implemented as Wallace Tree multiplier (https://github.com/SiluPanda/8-bit-wallace-tree-multipier) and the adders are based on carry-ripple-adder/subtracture that we already used in Analog-to-Digital circuit https://en.wikipedia.org/wiki/Adder%E2%80%93subtractor. 
-Note, when the supply is reduced the setup and hold time of flip-flops will be effected as well, hence we had to develope a model and MATLAB script to extract those information for different voltage and operaiton frequency. There is a good Q&A in stackexchange where it explain the concept https://electronics.stackexchange.com/questions/81709/how-to-find-setup-time-and-hold-time-for-d-flip-flop.
+Note, when the supply is reduced the setup and hold time of flip-flops will be effected as well, hence we had to develope a model and MATLAB script to extract those information for different voltage and operaiton frequency. There is a good Q&A in stackexchange where it explain the concept https://electronics.stackexchange.com/questions/81709/how-to-find-setup-time-and-hold-time-for-d-flip-flop. The summary of the method is depicted in following figure (adapted from mentioned paper).
+
+![alt text](https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/metastability.png)
 
 # HSPICE-MATLAB communication
 
