@@ -1,0 +1,29 @@
+Total Number of Operations = ~210 depends on randomness
+------------------------------------------------------------------------------------
+@Vdd=1, @f_clk=200 MHz->TotalPower=1172.304uW, Power/PE=32.564uW   			No Error - NO ABFT err
+------------------------------------------------------------------------------------
+@Vdd=0.8, @f_clk=200 MHz->TotalPower=723.0816uW, Power/PE=20.0856uW		    No Error - No ABFT err
+------------------------------------------------------------------------------------
+@Vdd=0.6, @f_clk=200 MHz->TotalPower=487.2096uW, Power/PE=13.5336uW 		No Error
+------------------------------------------------------------------------------------
+@Vdd=0.55, @f_clk=200 MHz->TotalPower=418.4136uW, Power/PE=11.6226uW        NO Error
+------------------------------------------------------------------------------------
+@Vdd=0.5, @f_clk=200 MHz->TotalPower=342.558uW, Power/PE=9.5155uW           No Error
+------------------------------------------------------------------------------------
+@Vdd=0.45, @f_clk=200 MHz->TotalPower=232.3728uW, Power/PE=6.4548uW         2 Errors
+------------------------------------------------------------------------------------
+@Vdd=0.425, @f_clk=200 MHz->TotalPower=224.4051uW, Power/PE=6.2335uW        23 Errors
+------------------------------------------------------------------------------------
+@Vdd=0.4, @f_clk=200 MHz->TotalPower=213.048uW, Power/PE=5.918uW        54 Errors!  - ABFT detected
+ Recompute I : @Vdd=0.4, @f_clk=133.3333 MHz->TotalPower=185.2704uW, Power/PE=5.1464uW  14 Errors!       -ABFT detected
+ Recompute II: @Vdd=0.4, @f_clk=80 MHz->TotalPower=106.8062uW, Power/PE=2.9668uW        No Error         -ABFT detected
+------------------------------------------------------------------------------------
+@Vdd=0.3, @f_clk=200 MHz->TotalPower=101.7803uW, Power/PE=2.8272uW   150 Error         - ABFT detected err
+------------------------------------------------------------------------------------
+@Vdd=0.2, @f_clk=200 MHz->TotalPower=22.325uW, Power/PE=0.62014uW      236			- ABFT detected err
+------------------------------------------------------------------------------------
+@Vdd=0.1, @f_clk=200 MHz->TotalPower=5.9638uW, Power/PE=0.16566uW      213			- ABFT detected err
+
+
+
+
