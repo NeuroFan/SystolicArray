@@ -51,6 +51,7 @@ The set-up-time of register in our co-simulation envirment is great nobe to emul
 
 (At first I was going to use GUI however GUI development discontinued for now)There are many script from different platforms required to be run in sequence and managing all for exhastive simulations with different parameters is difficual. For ease of use a simple GUI was designed as well to assist on this regard.
 This is still not a full automatic solution, and user must change the voltage-frequencies adaptively himself. It still takes weeks for the results generated for figures like the ones used in [1].
+
 ![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/GUI.png)
 
 # Simulation results and insights
