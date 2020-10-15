@@ -47,16 +47,17 @@ The set-up-time of register in our co-simulation envirment is great nobe to emul
 ![alt text](https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/metastability.png)
 
 
-
-
 # Co-simulation GUI
 
-There are many script from different platforms required to be run in sequence and managing all for exhastive simulations with different parameters is difficual. For ease of use a simple GUI was designed as well to assist on this regard.
+(At first I was going to use GUI however GUI development discontinued for now)There are many script from different platforms required to be run in sequence and managing all for exhastive simulations with different parameters is difficual. For ease of use a simple GUI was designed as well to assist on this regard.
 This is still not a full automatic solution, and user must change the voltage-frequencies adaptively himself. It still takes weeks for the results generated for figures like the ones used in [1].
-![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/GUI.png
-)
+![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/GUI.png)
 
+# Simulation results and insights
 
+Here I write about extra information that might shed more light on the idea, challenges and trade-offs. Lets start by looking at power consumption per PE with respect to matrix size. As following figure shows with growth in matrix size (hence systolic array) the share of overhead tends to be zero, so one might conclude it is good idea to utilize the structure for very large matrix-matrix multipication to achieve "Almost Zero" overhead accelerator, however we should remember the cost and power consumption of clock tree for such large arrays and intra-die variations might grow exponentioally as well.
+
+![alt text](https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/power%20per%20PE.jpg)
 
 # Description of Co-simulation software
 --------------------------------------------------------------------------------------------------
