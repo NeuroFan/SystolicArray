@@ -32,9 +32,11 @@ Unique combination extraction, out of all possible inputs and outputs and intern
 Since such monte carlo type simulation adds large overhead for simulation we did a trick to mimic the variations while keep the simulations tracktable, computationaly speaking.
 In simplest form one can add some jitter to set-up-time as a simplified way to mimic variations.
 
-                           VARIATION = round( (rand-0.5)*setup_hold_time*variation_percent); % e.g. 20%  jitter added on sampling period
-                           outp_smp_inx = current - setup_hold_time + VARIATION;
-                           
+    VARIATION = round( (rand-0.5)*setup_hold_time*variation_percent); % e.g. 20%  jitter added on sampling period
+    outp_smp_inx = current - setup_hold_time + VARIATION;
+       
+![alt text](https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/variations_mimic.png)
+
 
 # Voltage/frequency simulations
 
