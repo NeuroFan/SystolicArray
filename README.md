@@ -27,7 +27,14 @@ Most of simulation time is consumed in HSPICE and MATLAB (where the HSPICE outpu
 
 Unique combination extraction, out of all possible inputs and outputs and internal signals to all PEs most of them are redundant so in pre-processing only unique combinations are preserved and the rest are removed, this aids us in accelerating the simulation by multiple orders of magnitites.
 
+# Ambient and Process Variations effect
 
+Since such monte carlo type simulation adds large overhead for simulation we did a trick to mimic the variations while keep the simulations tracktable, computationaly speaking.
+In simplest form one can add some jitter to set-up-time as a simplified way to mimic variations.
+
+                           VARIATION = round( (rand-0.5)*setup_hold_time*variation_percent); % e.g. 20%  jitter added on sampling period
+                           outp_smp_inx = current - setup_hold_time + VARIATION;
+                           
 
 # Voltage/frequency simulations
 
