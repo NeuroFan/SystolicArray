@@ -60,18 +60,33 @@ The set-up-time of register in our co-simulation envirment is great nobe to emul
 ![alt text](https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/metastability.png)
 
 
-# Co-simulation GUI
-
-(At first I was going to use GUI however GUI development discontinued for now)There are many script from different platforms required to be run in sequence and managing all for exhastive simulations with different parameters is difficual. For ease of use a simple GUI was designed as well to assist on this regard.
-This is still not a full automatic solution, and user must change the voltage-frequencies adaptively himself. It still takes weeks for the results generated for figures like the ones used in [1].
-
-![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/GUI.png)
-
 # Simulation results and insights
 
 Here I write about extra information that might shed more light on the idea, challenges and trade-offs. Lets start by looking at power consumption per PE with respect to matrix size. As following figure shows with growth in matrix size (hence systolic array) the share of overhead tends to be zero, so one might conclude it is good idea to utilize the structure for very large matrix-matrix multipication to achieve "Almost Zero" overhead accelerator, however we should remember the cost and power consumption of clock tree for such large arrays and intra-die variations might grow exponentioally as well.
 
 ![alt text](https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/power%20per%20PE.jpg)
+
+# Silent Error rate
+
+As indiacated in our paper upper-bound of error for 1 single matrix multipicaiton is 50%. This should scare you, this is "upper bound" and not realistic. Further as we discussed in the paper, the usual applications (e.g. a deep neural nets) require tens of matrices to be multiplied in each episode of action, so the probablity of not detecting errors for an episode is really low (upper bound is 2^(- number of matrix multipications). Keep in mind that the worst case scenario we assumed is not realistic.
+
+To have a more realistic model of silent errro occurance rate, we made the following model (as described breifly in the paper).
+
+To extract exprimental silent error rate we must carry out millions of matrix multipications to extract this information which requires mind blowing computing resources if we only carry out SPICE simulations. However we decided to use co-simulation approach.
+
+![alt text](https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/silent_error_rate.png)
+
+In other word a bunch of PEs were simulated for different tempratures, different corner, different voltage and fix frequency in HSPICE. The rate of error for output bits were extracted, i.e. 24 bits. As expected error rate of MSB starts to rise faster than others as the MSB is associated with longest delay path usually. 
+
+Then using the above information we can do millions system level matrix multipications. During each PE's operation we inject faults based on probablity distribution shown in above image into output "bits". 
+
+
+# Co-simulation GUI (discontinued)
+
+There are many script from different platforms required to be run in sequence and managing all for exhastive simulations with different parameters is difficual. For ease of use a simple GUI was designed as well to assist on this regard.
+This is still not a full automatic solution, and user must change the voltage-frequencies adaptively himself. It still takes weeks for the results generated for figures like the ones used in [1].
+
+![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/GUI.png)
 
 # Description of Co-simulation software
 --------------------------------------------------------------------------------------------------
