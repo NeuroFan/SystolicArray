@@ -53,11 +53,6 @@ frequency (and hence save a huge simulation time) as the results for 1 slow enou
 ![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/simulation1.png)
 
 
-# Charactrization of D flip-flop metastabitlity in reduced voltage condition
-
-The set-up-time of register in our co-simulation envirment is great nobe to emulate variation (beside supply voltage). Further, the set-up-time and hold-time of flip-flops in reduced voltage regime changes. A simple linear extrapolation can be etimated howeve using HSPICE models we can make a transistor simulations to measure the parameters more accurately. For this purpose the method introduced in "Foley, C., "Characterizing metastability," Symposium on Advanced Research in Asynchronous Circuits and Systems, 1996., pp.175,184, 18-21 Mar 1996, doi: 10.1109/ASYNC.1996.494449" was used.  There is a good Q&A in stackexchange where it explain the concept https://electronics.stackexchange.com/questions/81709/how-to-find-setup-time-and-hold-time-for-d-flip-flop. The summary of the method is depicted in following figure (adapted from mentioned paper).
-
-![alt text](https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/metastability.png)
 
 
 # Simulation results and insights
@@ -81,12 +76,11 @@ In other word a bunch of PEs were simulated for different tempratures, different
 Then using the above information we can do millions system level matrix multipications. During each PE's operation we inject faults based on probablity distribution shown in above image into output "bits". 
 
 
-# Co-simulation GUI (discontinued)
+# Charactrization of D flip-flop metastabitlity in reduced voltage condition
 
-There are many script from different platforms required to be run in sequence and managing all for exhastive simulations with different parameters is difficual. For ease of use a simple GUI was designed as well to assist on this regard.
-This is still not a full automatic solution, and user must change the voltage-frequencies adaptively himself. It still takes weeks for the results generated for figures like the ones used in [1].
+The set-up-time of register in our co-simulation envirment is great nobe to emulate variation (beside supply voltage). Further, the set-up-time and hold-time of flip-flops in reduced voltage regime changes. A simple linear extrapolation can be etimated howeve using HSPICE models we can make a transistor simulations to measure the parameters more accurately. For this purpose the method introduced in "Foley, C., "Characterizing metastability," Symposium on Advanced Research in Asynchronous Circuits and Systems, 1996., pp.175,184, 18-21 Mar 1996, doi: 10.1109/ASYNC.1996.494449" was used.  There is a good Q&A in stackexchange where it explain the concept https://electronics.stackexchange.com/questions/81709/how-to-find-setup-time-and-hold-time-for-d-flip-flop. The summary of the method is depicted in following figure (adapted from mentioned paper).
 
-![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/GUI.png)
+![alt text](https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/figures/metastability.png)
 
 # Description of Co-simulation software
 --------------------------------------------------------------------------------------------------
