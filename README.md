@@ -1,12 +1,14 @@
 # Note:
 
 The following are notes that collected during prepration of a research work done by the author of the page. Note all information here included in the research paper. The information might vary with the ones presented in the paper since this page is not kept updated. However, the data here might shed more light and attract more researchers to the field and hopefully use our results.
+# NOTICE: Due to paten process the information related to details of the propose solution are not revealed, yet! 
 
-# SPICE and Behavioral simulation of systolic array equipped with ABFT 
 
-# Systolic Array with ABFT flavor
+# SPICE and Behavioral simulation of systolic array 
 
-We need to demostrate efficacy of Algorithm Based Fault Tolerance method for achiving low-voltage (high performance) computing. We propose a systolic array model with extra circuitry to detected computational errors on the fly. We need a platfom to simulate low-voltage operatiopn of our systolic array. The common digital simulation and synthesis tools lack detailed charactristics of logic cells hence we resort to perform our simulations using SPICE models. The flow of simulations are shown in below. The computer code or SPICE script of each section can be found in the repo.
+# Systolic Array with in low voltage
+
+We need to demostrate efficacy of our method for achiving low-voltage (high performance) computing. We propose a systolic array model with extra circuitry to detected computational errors on the fly. We need a platfom to simulate low-voltage operatiopn of our systolic array. The common digital simulation and synthesis tools lack detailed charactristics of logic cells hence we resort to perform our simulations using SPICE models. The flow of simulations are shown in below. The computer code or SPICE script of each section can be found in the repo.
 ![alt text]( https://github.com/NeuroFan/Systolic_Array_ABFT/blob/master/flow_of_simulations.png)
 
 
@@ -92,13 +94,13 @@ Output : Power consumption, actual error rate, ABFT error rate, etc.
 
 Description:
 The script does the following task in order:
- 1. system level matrix mul with ABFT augmented matrices and extract data fed on Systolic Array building blocks
+ 1. system level matrix mul with proposed method and extract data fed on Systolic Array building blocks
  2. Remove the repeatitive data (for example there might be 2 operations wit same inputs so only simulating once is enough
  3. Convert the unique data/operation set into binary and generate a file that is usable by HSPICE; 
  4. Modify HSPICE model to have supply voltage according to simulations parameters and run HSPICE from SHELL
  5. Read back the transient simulation results, first do data alignment according to clock, then check integrity and detect faults
  6. Redo Step 1, i.e. system level simulation however this time using results of operations from step 5
- 7. System Level simulation of ABFT checking part (the extra circuit on the systolic- notice the HSPIC simulation must verify error detection cirucit as well)
+ 7. System Level simulation of proposed method based error checking part (the extra circuit on the systolic- notice the HSPIC simulation must verify error detection cirucit as well)
  8. Extract power consumption, do extrapolations and estimations, report total estimated power + error rate + etc.
 --------------------------------------------------------------------------------------------------
 Generate Data :
@@ -111,7 +113,7 @@ Description: Since we cannot practically simulate a digital block in HSPICE for 
 
 Steps:
 
-1. Generate random matrices and convert into ABFT matrices (row, column wise)
+1. Generate random matrices and convert into special form of interst (row, column wise)
 
 2. do matrix multiplication and extract all operations along with their inputs (add, mul)
 
