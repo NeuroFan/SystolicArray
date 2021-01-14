@@ -1,4 +1,3 @@
-# NOTICE: Due to paten process the information related to details of the propose solution are not revealed, yet! 
 
 # Note:
 
