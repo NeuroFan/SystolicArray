@@ -3,6 +3,8 @@
 
 The following are notes that collected during prepration of a research work done by the author of the page. Note all information here included in the research paper. The information might vary with the ones presented in the paper since this page is not kept updated. However, the data here might shed more light and attract more researchers to the field and hopefully use our results.
 
+Please note due to patenting issues, not all simulation files are uploeaded.
+
 # Demonstration video
 Please find a video demonstrating adaptivity of our method with variations such as temrpature and IDF:
 
